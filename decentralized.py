@@ -13,10 +13,10 @@ def load_config(file):
         return yaml.safe_load(file)
 
 
-def start_node(id, ip, port, weight, nodes, read_weight, write_weight):
+def start_node(id, ip, port, weight, nodes, read_size, write_size):
     return subprocess.Popen(
-        ["python3", "decentralized/node.py", id, ip, str(port), str(weight), json.dumps(nodes), str(read_weight),
-         str(write_weight)])
+        ["python3", "decentralized/node.py", id, ip, str(port), str(weight), json.dumps(nodes), str(read_size),
+         str(write_size)])
 
 
 # Funcio per gestionar la senyal SIGINT
@@ -38,13 +38,13 @@ if __name__ == "__main__":
     processes = []
     nodes = []
 
-    write_weight = 3
-    read_weight = 2
+    write_size = 3
+    read_size = 2
 
     for n in config["nodes"]:
         n_ip = n["ip"]
         n_port = n["port"]
-        process = start_node(n["id"], n["ip"], n["port"], n["weight"], nodes, read_weight, write_weight)
+        process = start_node(n["id"], n["ip"], n["port"], n["weight"], nodes, read_size, write_size)
         processes.append(process)
         nodes.append(f"{n_ip}:{n_port}")
 
