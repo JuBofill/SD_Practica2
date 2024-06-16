@@ -1,3 +1,18 @@
+# SD_Task2_JuditAdrià
+## Descripció
+Aquest projecte conté les implementacions de dos sistemes d'emmagatzematge distribuït diferents.
+
+**Centralitzada:** Està formada per un Master i dos Slaves. Implementa el protocol 2PC.
+
+**Descentralitzada** Està formada per tres nodes. Implementa el protocol Quorum.
+
+## Execució
+Aquest projecte s'ha provat a través de PyCharm. Per a executar-lo d'aquesta manera cal:
+
+1. Obrir el projecte a Pycharm
+2. Executar el fitxer inicial (centralized.py pel cas centralitzat o decentralized.py pel cas descentralitzat).
+3. En cas de voler provar els tests, executar el fitxer de tests concret (dins la carpeta eval).
+
 # Distributed storage systems and the CAP theorem
 
 ```
